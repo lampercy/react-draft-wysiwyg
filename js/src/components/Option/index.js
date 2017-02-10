@@ -24,7 +24,7 @@ export default class Option extends Component {
   };
 
   render() {
-    const { children, className, activeClassName, active, disabled } = this.props;
+    const { children, className, activeClassName, active, disabled, title } = this.props;
     return (
       <div
         className={classNames(
@@ -37,6 +37,7 @@ export default class Option extends Component {
         )}
         onClick={this.onClick}
         aria-selected={active}
+        title={title}
       >
         {children}
       </div>

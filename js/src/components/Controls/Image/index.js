@@ -302,7 +302,7 @@ export default class ImageControl extends Component {
   }
 
   render(): Object {
-    const { config: { icon, className } } = this.props;
+    const { config: { icon, className, title } } = this.props;
     const { showModal } = this.state;
     return (
       <div
@@ -312,6 +312,7 @@ export default class ImageControl extends Component {
         aria-label="rdw-image-control"
       >
         <Option
+          title={title}
           className={classNames(className)}
           value="unordered-list-item"
           onClick={this.onOptionClick}

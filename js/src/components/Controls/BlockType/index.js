@@ -62,7 +62,7 @@ export default class BlockType extends Component {
   };
 
   renderFlat(blocks: Array<Object>): void {
-    const { config: { className } } = this.props;
+    const { config: { className, title } } = this.props;
     const { currentBlockType } = this.state;
 
     return (
@@ -71,6 +71,7 @@ export default class BlockType extends Component {
         blocks.map((block, index) =>
           <Option
             key={index}
+            title={title}
             value={block.style}
             active={currentBlockType === block.style}
             onClick={this.toggleBlockType}

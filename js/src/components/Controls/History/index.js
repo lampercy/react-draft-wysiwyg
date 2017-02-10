@@ -97,10 +97,11 @@ export default class History extends Component {
   }
 
   renderInFlatList(undoDisabled: bool, redoDisabled: bool, config: Object): Object {
-    const { options, undo, redo, className } = config;
+    const { options, undo, redo, className, titleUndo, titleRedo } = config;
     return (
       <div className={classNames('rdw-history-wrapper', className)} aria-label="rdw-history-control">
         {options.indexOf('undo') >= 0 && <Option
+          title={titleUndo}
           value="unordered-list-item"
           onClick={this.undo}
           className={classNames(undo.className)}
@@ -112,6 +113,7 @@ export default class History extends Component {
           />
         </Option>}
         {options.indexOf('redo') >= 0 && <Option
+          title={titleRedo}
           value="ordered-list-item"
           onClick={this.redo}
           className={classNames(redo.className)}

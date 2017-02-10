@@ -210,13 +210,14 @@ export default class Link extends Component {
   }
 
   renderInFlatList(showModal: bool, currentEntity: Object, config: Object): Object {
-    const { options, link, unlink, className } = config;
+    const { options, link, unlink, className, titleLink, titleUnlink } = config;
     const { editorState } = this.props;
     const contentState = editorState.getCurrentContent();
     const linkEntityCurrently = currentEntity && (contentState.getEntity(currentEntity).get('type') === 'LINK');
     return (
       <div className={classNames('rdw-link-wrapper', className)} aria-label="rdw-link-control">
         {options.indexOf('link') >= 0 && <Option
+          title={titleLink}
           value="unordered-list-item"
           className={classNames(link.className)}
           onClick={this.onOptionClick}
@@ -229,6 +230,7 @@ export default class Link extends Component {
           />
         </Option>}
         {options.indexOf('unlink') >= 0 && <Option
+          title={titleUnlink}
           disabled={!linkEntityCurrently}
           value="ordered-list-item"
           className={classNames(unlink.className)}

@@ -41,10 +41,11 @@ export default class TextAlign extends Component {
 
   renderInFlatList(config: Object): Object {
     const { currentTextAlignment } = this.state;
-    const { options, left, center, right, justify, className } = config;
+    const { options, left, center, right, justify, className, titleLeft, titleCenter, titleRight, titleJustify } = config;
     return (
       <div className={classNames('rdw-text-align-wrapper', className)} aria-label="rdw-textalign-control">
         {options.indexOf('left') >= 0 && <Option
+          title={titleLeft}
           value="left"
           className={classNames(left.className)}
           active={currentTextAlignment === 'left'}
@@ -56,6 +57,7 @@ export default class TextAlign extends Component {
           />
         </Option>}
         {options.indexOf('center') >= 0 && <Option
+          title={titleCenter}
           value="center"
           className={classNames(center.className)}
           active={currentTextAlignment === 'center'}
@@ -67,6 +69,7 @@ export default class TextAlign extends Component {
           />
         </Option>}
         {options.indexOf('right') >= 0 && <Option
+          title={titleRight}
           value="right"
           className={classNames(right.className)}
           active={currentTextAlignment === 'right'}
@@ -78,6 +81,7 @@ export default class TextAlign extends Component {
           />
         </Option>}
         {options.indexOf('justify') >= 0 && <Option
+          title={titleJustify}
           value="justify"
           className={classNames(justify.className)}
           active={currentTextAlignment === 'justify'}

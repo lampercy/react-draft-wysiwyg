@@ -33,10 +33,11 @@ export default class Remove extends Component {
   };
 
   render(): Object {
-    const { config: { icon, className } } = this.props;
+    const { config: { icon, className, title } } = this.props;
     return (
       <div className="rdw-remove-wrapper" aria-label="rdw-remove-control">
         <Option
+          title={title}
           className={classNames(className)}
           onClick={this.removeInlineStyles}
         >

@@ -161,7 +161,7 @@ export default class Embedded extends Component {
   }
 
   render(): Object {
-    const { config: { icon, className } } = this.props;
+    const { config: { icon, className, title } } = this.props;
     const { showModal } = this.state;
     return (
       <div
@@ -171,6 +171,7 @@ export default class Embedded extends Component {
         aria-label="rdw-embedded-control"
       >
         <Option
+          title={title}
           className={classNames(className)}
           value="unordered-list-item"
           onClick={this.onOptionClick}
