@@ -89,11 +89,11 @@ export default class List extends Component {
   // todo: evaluate refactoring this code to put a loop there and in other places also in code
   // hint: it will require moving click handlers
   renderInFlatList(currentBlockType: string, config: Object): Object {
-    const { options, unordered, ordered, indent, outdent, className, titleUnordered, titleOrdered, titleIndent, titleOutdent } = config;
+    const { options, unordered, ordered, indent, outdent, className } = config;
     return (
       <div className={classNames('rdw-list-wrapper', className)} aria-label="rdw-list-control">
         {options.indexOf('unordered') >= 0 && <Option
-          title={titleUnordered}
+          title={unordered.title}
           value="unordered-list-item"
           onClick={this.toggleBlockType}
           className={classNames(unordered.className)}
@@ -105,7 +105,7 @@ export default class List extends Component {
           />
         </Option>}
         {options.indexOf('ordered') >= 0 && <Option
-          title={titleOrdered}
+          title={ordered.title}
           value="ordered-list-item"
           onClick={this.toggleBlockType}
           className={classNames(ordered.className)}
@@ -117,7 +117,7 @@ export default class List extends Component {
           />
         </Option>}
         {options.indexOf('indent') >= 0 && <Option
-          title={titleIndent}
+          title={indent.title}
           onClick={this.indent}
           className={classNames(indent.className)}
         >
@@ -127,7 +127,7 @@ export default class List extends Component {
           />
         </Option>}
         {options.indexOf('outdent') >= 0 && <Option
-          title={titleOutdent}
+          title={outdent.title}
           onClick={this.outdent}
           className={classNames(outdent.className)}
         >
