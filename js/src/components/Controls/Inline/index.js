@@ -70,6 +70,7 @@ export default class Inline extends Component {
           .map((style, index) =>
             <Option
               key={index}
+              title={config[style].title}
               value={style.toUpperCase()}
               onClick={this.toggleInlineStyle}
               className={classNames(config[style].className)}
