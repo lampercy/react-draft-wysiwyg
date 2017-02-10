@@ -123,8 +123,6 @@ export default class WysiwygEditor extends Component {
       setFontSizes(toolbar.fontSize && toolbar.fontSize.options);
       setColors(toolbar.colorPicker && toolbar.colorPicker.colors);
       newState.toolbar = toolbar;
-      console.log('props.toolbar', props.toolbar);
-      console.log('toolbar', toolbar);
     }
     if (hasProperty(props, 'editorState') && this.props.editorState !== props.editorState) {
       if (props.editorState) {
